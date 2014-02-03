@@ -1,0 +1,11 @@
+<ul class="thumbnails">
+<li ng-repeat="wine in wines | slice: (page-1)*range : page*range">
+	<a href="#wines/{{ wine._id }}" class="thumbnail plain" style="text-align: center;">
+	    <img ng-src="{{ wine.picture === null ? 'pics/generic.jpg' : 'pics/' + wine.picture }}" height="150" width="125" alt="">
+	    <h5>{{ wine.name }}</h5>
+	    {{ wine.year }} {{ wine.grapes }}<br/>
+	    <i class="icon-globe"></i> {{ wine.region }}, {{ wine.country }}
+	</a>
+</li>
+</ul>
+<div paginator page="page" pageTotals="pageTotal" class="pagination pagination-centered"></div>
